@@ -1,3 +1,23 @@
+"""
+Este script realiza la interpolación 2D de datos de análisis de velocidad NMO desde un archivo dado y visualiza los resultados.
+El script sigue estos pasos:
+1. Solicita al usuario el nombre del archivo de entrada y los valores máximos para Trace y TWT.
+2. Extrae el nombre de la línea del nombre del archivo de entrada.
+3. Define los nombres de los archivos de entrada y salida.
+4. Configura los parámetros de interpolación y los rangos para Trace y TWT.
+5. Lee los datos del archivo de entrada.
+6. Crea una malla 2D para los valores de Trace y TWT.
+7. Realiza la interpolación utilizando un interpolador de Función de Base Radial (RBF).
+8. Imprime los valores máximos y mínimos de las velocidades interpoladas.
+9. Prepara y guarda los datos interpolados en un archivo de texto y un archivo binario.
+10. Grafica las velocidades interpoladas y los puntos de datos originales, incluyendo anotaciones y una barra de color.
+El script requiere las siguientes bibliotecas:
+- numpy
+- matplotlib
+- scipy
+- os
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.interpolate import RBFInterpolator
