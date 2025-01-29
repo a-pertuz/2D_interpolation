@@ -53,6 +53,10 @@ formato = '%d %d %.2f'
 # Guardar los datos interpolados en un archivo de texto
 np.savetxt(archivo_interpolado, datos_salida, header=encabezado, fmt=formato, comments='')
 
+# Guardar los datos interpolados en un archivo binario
+archivo_binario = f'{nombre_base_velocidades}_interp_2D.bin'
+velocidades_interpoladas.astype(np.float32).tofile(archivo_binario)
+
 # ------------------------ Graficar los resultados -------------------------
 # Crear una figura para la visualización
 plt.figure(figsize=(14, 8))
@@ -86,4 +90,3 @@ plt.gca().invert_yaxis()
 
 # Mostrar el gráfico
 plt.show()
-
